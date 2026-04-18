@@ -1,3 +1,10 @@
+<img width="1540" height="1900" alt="full_flow" src="https://github.com/user-attachments/assets/54f62ac4-6fb8-45fa-b746-ab09b5c1e413" />
+
+
+
+
+
+
 # 🧩 Template Structure – Lighting Slap Comp (Nuke)
 
 This template is organized into **layered, modular sections**, allowing artists to work per-element (FG, MG, BG, FX, etc.) and quickly toggle between **raw render vs slap comp output**.
