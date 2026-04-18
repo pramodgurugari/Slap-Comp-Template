@@ -1,0 +1,58 @@
+1:- First comp Pro_Tools into your .nuke folder
+
+2:- copy this script into your .nuke Menu.py
+
+
+
+
+import os
+import nuke
+
+ROOT_PATH = os.path.join(os.path.expanduser("~"), ".nuke", "pro_Tools")
+MENU_NAME = "Pro_Tools"
+
+nuke.pluginAddPath(ROOT_PATH)
+
+VALID_EXT = (".py", ".nk", ".gizmo", ".nodes")
+
+
+def run_script(path):
+    ext = os.path.splitext(path)[1].lower()
+
+    try:
+        if ext == ".py":
+            with open(path, "rb") as f:
+                exec(compile(f.read(), path, "exec"), globals())
+
+        elif ext == ".nk":
+            nuke.scriptOpen(path)
+
+        elif ext == ".gizmo":
+            gizmo_name = os.path.splitext(os.path.basename(path))[0]
+            nuke.createNode(gizmo_name)
+
+        elif ext == ".nodes":
+            nuke.nodePaste(path)
+
+    except Exception as e:
+        nuke.message("Error loading {}:\n{}".format(os.path.basename(path), str(e)))
+
+
+def build_menu(menu, path):
+    if not os.path.exists(path):
+        return
+
+    for item in sorted(os.listdir(path)):
+        full_path = os.path.join(path, item)
+
+        if os.path.isdir(full_path):
+            sub_menu = menu.addMenu(item)
+            build_menu(sub_menu, full_path)
+        else:
+            if any(item.lower().endswith(ext) for ext in VALID_EXT):
+                name = os.path.splitext(item)[0]
+                menu.addCommand(name, lambda p=full_path: run_script(p))
+
+
+main_menu = nuke.menu("Nuke").addMenu(MENU_NAME)
+build_menu(main_menu, ROOT_PATH)

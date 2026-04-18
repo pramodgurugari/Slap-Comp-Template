@@ -1,0 +1,3455 @@
+#! /media/vis/pipe/tools/Foundry/Nuke15.1v2/libnuke-15.1.2.so -nx
+version 15.1 v2
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="1920" y="27" w="1920" h="983" maximized="1" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1257" stretch="1"/>
+            <splitter orientation="2">
+                <split size="552"/>
+                <dock id="" activePageId="Viewer.1">
+                    <page id="Viewer.1"/>
+                </dock>
+                <split size="388"/>
+                <dock id="" activePageId="DAG.1" focus="true">
+                    <page id="DAG.1"/>
+                    <page id="Curve Editor.1"/>
+                    <page id="DopeSheet.1"/>
+                </dock>
+            </splitter>
+            <split size="615"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+                <page id="uk.co.thefoundry.backgroundrenderview.1"/>
+                <page id="Scenegraph.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name /home/pramodg/.nuke/LGT_Slap_Comp_Template.nk
+ frame 1001
+ first_frame 1001
+ last_frame 1721
+ lock_range true
+ format "2048 1433 0 0 2048 1433 1 "
+ proxy_type scale
+ proxy_format "1024 778 0 0 1024 778 1 1K_Super_35(full-ap)"
+ colorManagement OCIO
+ defaultViewerLUT "OCIO LUTs"
+ workingSpaceLUT scene_linear
+ monitorLut "sRGB (ACES)"
+ monitorOutLUT "sRGB (ACES)"
+ int8Lut matte_paint
+ int16Lut texture_paint
+ logLut compositing_log
+ floatLut scene_linear
+ addUserKnob {20 Deadline}
+ addUserKnob {1 FrameListMode l frameListMode}
+ FrameListMode Global
+ addUserKnob {1 CustomFrameList l customFrameList}
+ CustomFrameList 1001-1741
+ addUserKnob {1 Department l department}
+ Department Light
+ addUserKnob {1 Pool l pool}
+ Pool nuke_pool
+ addUserKnob {1 SecondaryPool l secondaryPool}
+ SecondaryPool maya_pool
+ addUserKnob {1 Group l group}
+ Group none
+ addUserKnob {1 Priority l priority}
+ Priority 100
+ addUserKnob {1 MachineLimit l machineLimit}
+ MachineLimit 0
+ addUserKnob {1 IsBlacklist l isBlacklist}
+ IsBlacklist False
+ addUserKnob {1 MachineList l machineList}
+ addUserKnob {1 LimitGroups l limitGroups}
+ addUserKnob {1 SubmitSuspended l submitSuspended}
+ SubmitSuspended False
+ addUserKnob {1 ChunkSize l chunkSize}
+ ChunkSize 20
+ addUserKnob {1 ConcurrentTasks l concurrentTasks}
+ ConcurrentTasks 1
+ addUserKnob {1 LimitConcurrentTasks l limitConcurrentTasks}
+ LimitConcurrentTasks True
+ addUserKnob {1 Threads l threads}
+ Threads 0
+ addUserKnob {1 SubmitScene l submitScene}
+ SubmitScene True
+ addUserKnob {1 BatchMode l batchMode}
+ BatchMode True
+ addUserKnob {1 ContinueOnError l continueOnError}
+ ContinueOnError True
+ addUserKnob {1 SeparateJobs l separateJobs}
+ SeparateJobs True
+ addUserKnob {1 UseNodeRange l useNodeRange}
+ UseNodeRange True
+ addUserKnob {1 UseGpu l useGpu}
+ UseGpu True
+ addUserKnob {1 UseSpecificGpu l useSpecificGpu}
+ UseSpecificGpu False
+ addUserKnob {1 ChooseGpu l chooseGpu}
+ ChooseGpu 0
+ addUserKnob {1 EnforceRenderOrder l enforceRenderOrder}
+ EnforceRenderOrder False
+ addUserKnob {1 DeadlineRenderMode l deadlineRenderMode}
+ DeadlineRenderMode "Render Full Resolution"
+ addUserKnob {1 PerformanceProfiler l performanceProfiler}
+ PerformanceProfiler False
+ addUserKnob {1 ReloadPlugin l reloadPlugin}
+ ReloadPlugin False
+ addUserKnob {1 PerformanceProfilerPath l performanceProfilerPath}
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode27
+ tile_color 0x3a3b42ff
+ note_font_size 42
+ note_font_color 0xb2b5a5ff
+ xpos 5730
+ ypos 10866
+ bdwidth 719
+ bdheight 373
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode44
+ tile_color 0x3a3b42ff
+ note_font_size 42
+ note_font_color 0xb2b5a5ff
+ xpos 6657
+ ypos 10121
+ bdwidth 665
+ bdheight 346
+ z_order -1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode1
+ tile_color 0x8e388e00
+ label "RGB MATTE"
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 100
+ note_font_color 0xffffffff
+ xpos 2417
+ ypos 9662
+ appearance Border
+ border_width 10
+ bdwidth 1808
+ bdheight 880
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode10
+ tile_color 0x388e8e00
+ label B
+ note_font_size 100
+ note_font_color 0xff
+ xpos 916
+ ypos 95
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode11
+ tile_color 0x388e8e00
+ label C
+ note_font_size 100
+ note_font_color 0xff
+ xpos 1821
+ ypos 95
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode12
+ tile_color 0x6688a9ff
+ label HAND_SHADOW
+ note_font_size 30
+ xpos 1919
+ ypos 5503
+ bdwidth 284
+ bdheight 143
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode13
+ tile_color 0x388e8e00
+ label A
+ note_font_size 100
+ note_font_color 0xff
+ xpos 35
+ ypos 4871
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode14
+ tile_color 0x388e8e00
+ label B
+ note_font_size 100
+ note_font_color 0xff
+ xpos 938
+ ypos 4869
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode15
+ tile_color 0x6688a9ff
+ label HAND_SHADOW
+ note_font_size 30
+ xpos 1887
+ ypos 3095
+ bdwidth 284
+ bdheight 143
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode16
+ tile_color 0x3700e5ff
+ label PROP
+ note_font "FreeMono Bold"
+ note_font_size 900
+ xpos -627
+ ypos 1812
+ appearance Border
+ border_width 10
+ bookmark false
+ bdwidth 3716
+ bdheight 2090
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode17
+ tile_color 0x388e8e00
+ label A
+ note_font_size 100
+ note_font_color 0xff
+ xpos 3
+ ypos 2463
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode18
+ tile_color 0xf9a400ff
+ label ATMOS
+ note_font "FreeMono Bold"
+ note_font_size 800
+ note_font_color 0xff
+ xpos 3231
+ ypos 7016
+ appearance Border
+ border_width 10
+ bookmark false
+ bdwidth 966
+ bdheight 1194
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode2
+ tile_color 0x222222ff
+ note_font_size 20
+ note_font_color 0xff
+ xpos 2474
+ ypos 9836
+ bdwidth 1693
+ bdheight 678
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode20
+ tile_color 0x388e8e00
+ label A
+ note_font_size 100
+ note_font_color 0xff
+ xpos 21
+ ypos 97
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode22
+ tile_color 0x388e8e00
+ label C
+ note_font_size 100
+ note_font_color 0xff
+ xpos 1843
+ ypos 4869
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode23
+ tile_color 0x388e8e00
+ label B
+ note_font_size 100
+ note_font_color 0xff
+ xpos 906
+ ypos 2461
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode24
+ tile_color 0x388e8e00
+ label C
+ note_font_size 100
+ note_font_color 0xff
+ xpos 1817
+ ypos 2461
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode25
+ tile_color 0xff7777ff
+ label "LGT Flow Switch  (Do not Delete)"
+ note_font "DejaVu Sans Bold"
+ note_font_size 25
+ note_font_color 0xff0000ff
+ xpos 4669
+ ypos 11537
+ appearance Border
+ border_width 50
+ bdwidth 495
+ bdheight 299
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode26
+ tile_color 0x9ba4adff
+ label "Deep To Image convert\n"
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 20
+ xpos 4795
+ ypos 6905
+ bdwidth 256
+ bdheight 229
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode28
+ tile_color 0x6488ff
+ label "AOVS Contact Sheet"
+ note_font "DejaVu Sans Bold"
+ note_font_size 25
+ note_font_color 0xffffffff
+ xpos 5351
+ ypos 10902
+ bdwidth 277
+ bdheight 452
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode29
+ tile_color 0x6488ff
+ label "LGT SLAP COMP"
+ note_font "DejaVu Sans Bold"
+ note_font_size 25
+ note_font_color 0xffffffff
+ xpos 4794
+ ypos 10900
+ bdwidth 272
+ bdheight 478
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode3
+ tile_color 0x388e8e00
+ label FG
+ note_font_size 100
+ note_font_color 0xff
+ xpos 4
+ ypos -2283
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode30
+ tile_color 0x6488ff
+ label "Multi Light AOVS "
+ note_font "DejaVu Sans Bold"
+ note_font_size 25
+ note_font_color 0xffffffff
+ xpos 4246
+ ypos 10912
+ bdwidth 277
+ bdheight 452
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode31
+ gl_color 0xff08e1ff
+ label "\nArtist : \nShot Name:\nSequence Name :\nShot Description:\nScene:\nFrame Range:\nFPS :\nStatus :\n\nSubmission Note :\n\n\n"
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 50
+ note_font_color 0xffffffff
+ xpos 6611
+ ypos 10682
+ appearance Border
+ border_width 100
+ bdwidth 1551
+ bdheight 727
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode32
+ tile_color 0x1d1f3dff
+ gl_color 0x1a0922ff
+ label "CG Shadow"
+ note_font_size 50
+ note_font_color 0xff
+ xpos 10358
+ ypos 4380
+ appearance Border
+ border_width 10
+ bdwidth 1548
+ bdheight 819
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode35
+ tile_color 0x5e3678ff
+ label "Live Plate"
+ note_font "FreeMono Bold"
+ note_font_size 900
+ xpos 8481
+ ypos 1802
+ appearance Border
+ border_width 50
+ bookmark false
+ bdwidth 4557
+ bdheight 7283
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode38
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 372
+ ypos 520
+ bdwidth 137
+ bdheight 122
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode39
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 1363
+ ypos 501
+ bdwidth 150
+ bdheight 115
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode4
+ tile_color 0x388e8e00
+ label MG
+ note_font_size 100
+ note_font_color 0xff
+ xpos 907
+ ypos -2285
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode41
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 2310
+ ypos 495
+ bdwidth 137
+ bdheight 105
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode42
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 351
+ ypos 2891
+ bdwidth 136
+ bdheight 117
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode43
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 1360
+ ypos 2864
+ bdwidth 140
+ bdheight 126
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode45
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 2266
+ ypos 2853
+ bdwidth 142
+ bdheight 130
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode46
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 386
+ ypos 5322
+ bdwidth 137
+ bdheight 119
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode47
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 1391
+ ypos 5287
+ bdwidth 136
+ bdheight 119
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode48
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 2322
+ ypos 5262
+ bdwidth 138
+ bdheight 132
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode49
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 3864
+ ypos 7617
+ bdwidth 132
+ bdheight 134
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode5
+ tile_color 0x7aff00ff
+ label Charater
+ note_font "FreeMono Bold"
+ note_font_size 900
+ note_font_color 0xffffffff
+ xpos -620
+ ypos -554
+ appearance Border
+ border_width 10
+ bookmark false
+ bdwidth 3711
+ bdheight 2086
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode50
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 9065
+ ypos -481
+ bdwidth 138
+ bdheight 127
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode51
+ tile_color 0x1d1f3dff
+ gl_color 0x1a0922ff
+ label "CG Shadow"
+ note_font_size 50
+ note_font_color 0xff
+ xpos 4341
+ ypos -836
+ appearance Border
+ border_width 10
+ bdwidth 1789
+ bdheight 1168
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode52
+ tile_color 0x5d3d58ff
+ label "Plate Rotos"
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 35
+ note_font_color 0xffffffff
+ xpos 9613
+ ypos 6998
+ appearance Border
+ border_width 10
+ bdwidth 896
+ bdheight 1555
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode59
+ tile_color 0xff001eff
+ label ENV
+ note_font "FreeMono Bold"
+ note_font_size 900
+ xpos -618
+ ypos -2934
+ appearance Border
+ border_width 10
+ bookmark false
+ bdwidth 3706
+ bdheight 2095
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode6
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 337
+ ypos -1909
+ bdwidth 136
+ bdheight 125
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode7
+ tile_color 0x6688a9ff
+ label HAND_SHADOW
+ note_font_size 30
+ xpos 1888
+ ypos -1651
+ bdwidth 284
+ bdheight 143
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode8
+ tile_color 0x388e8e00
+ label BG
+ note_font_size 100
+ note_font_color 0xff
+ xpos 1812
+ ypos -2285
+ bdwidth 844
+ bdheight 1326
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode9
+ tile_color 0xffe8a0ff
+ label FX
+ note_font "FreeMono Bold"
+ note_font_size 900
+ xpos -627
+ ypos 4201
+ appearance Border
+ border_width 10
+ bookmark false
+ bdwidth 3722
+ bdheight 2100
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode19
+ tile_color 0x8e388e00
+ label DMP/Sky
+ note_font_size 75
+ note_font_color 0xff
+ xpos 5143
+ ypos 8592
+ appearance Border
+ border_width 10
+ bdwidth 855
+ bdheight 838
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode21
+ tile_color 0x8e388e00
+ label RefSpheres
+ note_font "Bitstream Vera Sans Bold"
+ note_font_size 50
+ note_font_color 0xff
+ xpos 6237
+ ypos 8957
+ appearance Border
+ border_width 10
+ bdwidth 536
+ bdheight 916
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode33
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 1356
+ ypos -1905
+ bdwidth 138
+ bdheight 122
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode36
+ tile_color 0x388e8e00
+ label "Plate / Footage"
+ note_font_size 50
+ note_font_color 0xff
+ xpos 10656
+ ypos 2706
+ appearance Border
+ border_width 10
+ bdwidth 579
+ bdheight 1096
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode37
+ tile_color 0x927192ff
+ label Cryptomatte
+ note_font_size 20
+ xpos 2270
+ ypos -1918
+ bdwidth 142
+ bdheight 124
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name BackdropNode40
+ tile_color 0x8e8037ff
+ label "Sample Template"
+ note_font_size 100
+ note_font_color 0xff
+ xpos 8642
+ ypos -869
+ appearance Border
+ border_width 100
+ bdwidth 965
+ bdheight 1325
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name _
+ tile_color 0xff0000ff
+ note_font_size 20
+ note_font_color 0xff
+ xpos 2500
+ ypos 9858
+ bdwidth 333
+ bdheight 33
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name __
+ tile_color 0xff00ff
+ note_font_size 20
+ note_font_color 0xff
+ xpos 2500
+ ypos 9893
+ bdwidth 333
+ bdheight 33
+ z_order 1
+}
+BackdropNode {
+ inputs 0
+ name ___
+ tile_color 0xffff
+ note_font_size 20
+ note_font_color 0xff
+ xpos 2501
+ ypos 9927
+ bdwidth 333
+ bdheight 33
+ z_order 1
+}
+StickyNote {
+ inputs 0
+ name StickyNote1
+ tile_color 0x555555ff
+ gl_color 0x555555ff
+ label "SLAP COMP\nLIGHTING TEMPLATE \n--------------------------------------------\n   Created BY:- pramodg\n    https://pramod_pro.artstation.com/"
+ note_font "Verdana Bold"
+ note_font_size 800
+ xpos 2351
+ ypos -4744
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp30
+ xpos 8910
+ ypos -687
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat21
+ xpos 8910
+ ypos -541
+}
+set N107974a0 [stack 0]
+Grade {
+ name Grade1
+ xpos 8910
+ ypos -378
+}
+Dot {
+ name Dot135
+ xpos 8944
+ ypos -169
+}
+set N11e23130 [stack 0]
+push $N107974a0
+Dot {
+ name Dot136
+ xpos 8771
+ ypos -531
+}
+Dot {
+ name Dot137
+ xpos 8771
+ ypos -104
+}
+set N11c88e70 [stack 0]
+Dot {
+ name Dot138
+ xpos 8771
+ ypos 70
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH27
+ xpos 8913
+ ypos 66
+ lifetimeStart 1001
+ lifetimeEnd 1721
+}
+Dot {
+ name Dot139
+ xpos 8947
+ ypos 330
+}
+push $N11e23130
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead14
+ xpos 9319
+ ypos -670
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat13
+ xpos 9319
+ ypos -553
+}
+Dot {
+ name Dot140
+ xpos 9353
+ ypos -169
+}
+set N10c17df0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor25
+ xpos 9234
+ ypos -173
+}
+Dot {
+ name Dot141
+ xpos 9268
+ ypos -289
+}
+Dot {
+ name Dot142
+ xpos 9406
+ ypos -289
+}
+Dot {
+ name Dot143
+ xpos 9406
+ ypos -5
+}
+push $N11c88e70
+push $N10c17df0
+Dot {
+ name Dot144
+ xpos 9353
+ ypos -104
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor26
+ xpos 9227
+ ypos -108
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH28
+ xpos 9227
+ ypos -9
+}
+Dot {
+ name Dot145
+ xpos 9261
+ ypos 316
+}
+StickyNote {
+ inputs 0
+ name StickyNote46
+ tile_color 0xdfff00ff
+ label "SHOT RENDER Cam"
+ note_font "FreeSans Bold"
+ note_font_size 30
+ xpos 6667
+ ypos 10159
+}
+StickyNote {
+ inputs 0
+ name StickyNote9
+ tile_color 0xdfff00ff
+ label Referance
+ note_font "FreeSans Bold"
+ note_font_size 30
+ xpos 6012
+ ypos 10903
+}
+StickyNote {
+ inputs 0
+ name StickyNote2
+ tile_color 0x555555ff
+ gl_color 0x555555ff
+ label "SLAP COMP\nLIGHTING TEMPLATE \n--------------------------------------------\n   Created BY:- pramodg\n    https://pramod_pro.artstation.com/"
+ note_font "Verdana Bold"
+ note_font_size 800
+ xpos 3003
+ ypos 12220
+}
+StickyNote {
+ inputs 0
+ name StickyNote47
+ tile_color 0xdfff00ff
+ label "MATCHMOVE Cams"
+ note_font "FreeSans Bold"
+ note_font_size 30
+ xpos 7014
+ ypos 10157
+}
+Camera3 {
+ inputs 0
+ name Camera1
+ xpos 6776
+ ypos 10300
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp17
+ xpos 2874
+ ypos 10050
+ postage_stamp true
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp16
+ xpos 2613
+ ypos 10049
+ postage_stamp true
+}
+Dot {
+ name Dot22
+ xpos 2647
+ ypos 10240
+}
+Merge2 {
+ inputs 2
+ name Merge15
+ xpos 2874
+ ypos 10236
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp18
+ xpos 3055
+ ypos 10044
+ postage_stamp true
+}
+Merge2 {
+ inputs 2
+ name Merge18
+ xpos 3055
+ ypos 10236
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat19
+ xpos 4419
+ ypos 10230
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp13
+ xpos 3703
+ ypos 7363
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat17
+ xpos 3703
+ ypos 7503
+}
+set N11e7fb90 [stack 0]
+push $N11e7fb90
+Dot {
+ name Dot24
+ xpos 3555
+ ypos 7513
+}
+Dot {
+ name Dot130
+ xpos 3555
+ ypos 7936
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH25
+ xpos 3703
+ ypos 7932
+}
+Dot {
+ name Dot20
+ xpos 3737
+ ypos 7979
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp10
+ xpos 2158
+ ypos 5051
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat16
+ xpos 2158
+ ypos 5200
+}
+set N11d50f70 [stack 0]
+Dot {
+ name Dot10
+ xpos 2192
+ ypos 5553
+}
+set N11d085d0 [stack 0]
+push $N11d50f70
+Dot {
+ name Dot104
+ xpos 2012
+ ypos 5210
+}
+Dot {
+ name Dot105
+ xpos 2012
+ ypos 5618
+}
+set N11d0b680 [stack 0]
+Dot {
+ name Dot124
+ xpos 2012
+ ypos 5788
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH22
+ xpos 2158
+ ypos 5784
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp11
+ xpos 1244
+ ypos 5050
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat15
+ xpos 1244
+ ypos 5208
+}
+set N11de86a0 [stack 0]
+Dot {
+ name Dot107
+ xpos 1278
+ ypos 5552
+}
+set N11dde3e0 [stack 0]
+push $N11de86a0
+Dot {
+ name Dot112
+ xpos 1098
+ ypos 5218
+}
+Dot {
+ name Dot113
+ xpos 1098
+ ypos 5617
+}
+set N11de4100 [stack 0]
+Dot {
+ name Dot125
+ xpos 1098
+ ypos 5787
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH23
+ xpos 1240
+ ypos 5783
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp12
+ xpos 223
+ ypos 5079
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat14
+ xpos 223
+ ypos 5232
+}
+set N11d61720 [stack 0]
+Dot {
+ name Dot115
+ xpos 257
+ ypos 5571
+}
+set N10f34380 [stack 0]
+push $N11d61720
+Dot {
+ name Dot120
+ xpos 81
+ ypos 5242
+}
+Dot {
+ name Dot121
+ xpos 81
+ ypos 5636
+}
+set N11dff1d0 [stack 0]
+Dot {
+ name Dot126
+ xpos 81
+ ypos 5810
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH24
+ xpos 223
+ ypos 5806
+}
+Dot {
+ name Dot127
+ xpos 257
+ ypos 6070
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge5
+ xpos 1240
+ ypos 6066
+}
+Dot {
+ name Dot128
+ xpos 1822
+ ypos 6073
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge6
+ xpos 2154
+ ypos 6068
+}
+PostageStamp {
+ name PostageStamp23
+ xpos 3997
+ ypos 6039
+ postage_stamp true
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp7
+ xpos 2126
+ ypos 2643
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat13
+ xpos 2126
+ ypos 2807
+}
+set N10f0e950 [stack 0]
+Dot {
+ name Dot16
+ xpos 2160
+ ypos 3145
+}
+set N110931a0 [stack 0]
+push $N10f0e950
+Dot {
+ name Dot79
+ xpos 1980
+ ypos 2817
+}
+Dot {
+ name Dot80
+ xpos 1980
+ ypos 3210
+}
+set N10bf5120 [stack 0]
+Dot {
+ name Dot99
+ xpos 1980
+ ypos 3380
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH16
+ xpos 2126
+ ypos 3376
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp8
+ xpos 1212
+ ypos 2642
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat12
+ xpos 1212
+ ypos 2782
+}
+set N11a261c0 [stack 0]
+Dot {
+ name Dot82
+ xpos 1246
+ ypos 3144
+}
+set N11ab0e70 [stack 0]
+push $N11a261c0
+Dot {
+ name Dot87
+ xpos 1066
+ ypos 2792
+}
+Dot {
+ name Dot88
+ xpos 1066
+ ypos 3209
+}
+set N119a3570 [stack 0]
+Dot {
+ name Dot100
+ xpos 1066
+ ypos 3379
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH17
+ xpos 1208
+ ypos 3375
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp9
+ xpos 191
+ ypos 2671
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat11
+ xpos 191
+ ypos 2809
+}
+set N11a19050 [stack 0]
+Dot {
+ name Dot90
+ xpos 225
+ ypos 3163
+}
+set N11a29ff0 [stack 0]
+push $N11a19050
+Dot {
+ name Dot95
+ xpos 49
+ ypos 2819
+}
+Dot {
+ name Dot96
+ xpos 49
+ ypos 3228
+}
+set N11aeec10 [stack 0]
+Dot {
+ name Dot101
+ xpos 49
+ ypos 3402
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH18
+ xpos 191
+ ypos 3398
+}
+Dot {
+ name Dot102
+ xpos 225
+ ypos 3662
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge8
+ xpos 1208
+ ypos 3658
+}
+Dot {
+ name Dot103
+ xpos 1790
+ ypos 3665
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge9
+ xpos 2122
+ ypos 3660
+}
+PostageStamp {
+ name PostageStamp22
+ xpos 3987
+ ypos 3636
+ postage_stamp true
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp4
+ xpos 2136
+ ypos 277
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat10
+ xpos 2136
+ ypos 433
+}
+set N11c7af20 [stack 0]
+Dot {
+ name Dot5
+ xpos 2170
+ ypos 779
+}
+set N11bcab50 [stack 0]
+push $N11c7af20
+Dot {
+ name Dot28
+ xpos 1990
+ ypos 443
+}
+Dot {
+ name Dot31
+ xpos 1990
+ ypos 844
+}
+set N11bd1260 [stack 0]
+Dot {
+ name Dot75
+ xpos 1990
+ ypos 1014
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH10
+ xpos 2136
+ ypos 1010
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp5
+ xpos 1222
+ ypos 274
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat9
+ xpos 1222
+ ypos 417
+}
+set N11bd9880 [stack 0]
+Dot {
+ name Dot50
+ xpos 1256
+ ypos 778
+}
+set N11be9940 [stack 0]
+push $N11bd9880
+Dot {
+ name Dot63
+ xpos 1076
+ ypos 427
+}
+Dot {
+ name Dot64
+ xpos 1076
+ ypos 843
+}
+set N11c2c0d0 [stack 0]
+Dot {
+ name Dot76
+ xpos 1076
+ ypos 1013
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH11
+ xpos 1218
+ ypos 1009
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp6
+ xpos 209
+ ypos 305
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat8
+ xpos 209
+ ypos 438
+}
+set N11b1ad10 [stack 0]
+Dot {
+ name Dot66
+ xpos 243
+ ypos 797
+}
+set N11a57e70 [stack 0]
+push $N11b1ad10
+Dot {
+ name Dot71
+ xpos 67
+ ypos 448
+}
+Dot {
+ name Dot72
+ xpos 67
+ ypos 862
+}
+set N11c08470 [stack 0]
+Dot {
+ name Dot77
+ xpos 67
+ ypos 1036
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH12
+ xpos 209
+ ypos 1032
+}
+Dot {
+ name Dot78
+ xpos 243
+ ypos 1296
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge3
+ xpos 1218
+ ypos 1292
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge4
+ xpos 2136
+ ypos 1295
+}
+PostageStamp {
+ name PostageStamp21
+ xpos 3967
+ ypos 1285
+ postage_stamp true
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp31
+ xpos 5655
+ ypos -714
+ postage_stamp true
+}
+add_layer {shadow_mask shadow_mask.red shadow_mask.green shadow_mask.blue}
+Shuffle2 {
+ fromInput1 {{0} B}
+ in1 shadow_mask
+ fromInput2 {{0} B}
+ mappings "4 shadow_mask.red 0 0 rgba.red 0 0 shadow_mask.green 0 1 rgba.green 0 1 shadow_mask.blue 0 2 rgba.blue 0 2 black -1 -1 rgba.alpha 0 3"
+ name Shuffle_Shadow1
+ xpos 5655
+ ypos -563
+}
+set Nd49115d0 [stack 0]
+Dot {
+ name Dot148
+ xpos 5505
+ ypos -559
+}
+Keyer {
+ operation "luminance key"
+ name Keyer3
+ xpos 5471
+ ypos -472
+}
+Grade {
+ white {0.85 1 1.15 1}
+ multiply 0.02
+ name Grade2
+ xpos 5471
+ ypos -335
+}
+push $Nd49115d0
+Dot {
+ name Dot150
+ xpos 5884
+ ypos -559
+}
+Keyer {
+ operation "luminance key"
+ range {0.009115931423 0.3697128861 1 1}
+ name Keyer4
+ xpos 5850
+ ypos -471
+}
+Blur {
+ channels alpha
+ size 7
+ name Blur1
+ xpos 5850
+ ypos -337
+}
+push $Nd49115d0
+Invert {
+ name Invert1
+ xpos 5655
+ ypos -471
+}
+Grade {
+ inputs 1+1
+ white {0.8499999642 1 1.149999976 1}
+ name Grade3
+ xpos 5655
+ ypos -331
+}
+Dot {
+ name Dot151
+ xpos 5689
+ ypos -187
+}
+Merge2 {
+ inputs 2
+ name Merge16
+ xpos 5471
+ ypos -191
+}
+Dot {
+ name Dot152
+ xpos 5505
+ ypos 125
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp3
+ xpos 2127
+ ypos -2103
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat7
+ xpos 2126
+ ypos -1977
+}
+set N10a8e670 [stack 0]
+Dot {
+ name Dot46
+ xpos 2161
+ ypos -1601
+}
+set N118be640 [stack 0]
+push $N10a8e670
+Dot {
+ name Dot55
+ xpos 1981
+ ypos -1967
+}
+Dot {
+ name Dot56
+ xpos 1981
+ ypos -1536
+}
+set N11066ba0 [stack 0]
+Dot {
+ name Dot58
+ xpos 1981
+ ypos -1366
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH6
+ xpos 2127
+ ypos -1370
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp1
+ xpos 1213
+ ypos -2104
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat4
+ xpos 1213
+ ypos -1993
+}
+set N10d51e50 [stack 0]
+Dot {
+ name Dot8
+ xpos 1247
+ ypos -1602
+}
+set N10f9c470 [stack 0]
+push $N10d51e50
+Dot {
+ name Dot43
+ xpos 1067
+ ypos -1983
+}
+Dot {
+ name Dot45
+ xpos 1067
+ ypos -1537
+}
+set N10bc31c0 [stack 0]
+Dot {
+ name Dot49
+ xpos 1067
+ ypos -1367
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH3
+ xpos 1213
+ ypos -1371
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp2
+ xpos 189
+ ypos -2092
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat3
+ xpos 189
+ ypos -1955
+}
+set N10f5ecd0 [stack 0]
+Dot {
+ name Dot30
+ xpos 226
+ ypos -1583
+}
+set N11047050 [stack 0]
+push $N10f5ecd0
+Dot {
+ name Dot36
+ xpos 50
+ ypos -1945
+}
+Dot {
+ name Dot37
+ xpos 50
+ ypos -1518
+}
+set N133e26b0 [stack 0]
+Dot {
+ name Dot2
+ xpos 50
+ ypos -1344
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH1
+ xpos 192
+ ypos -1348
+ lifetimeStart 1001
+ lifetimeEnd 1721
+}
+Dot {
+ name Dot1
+ xpos 226
+ ypos -1084
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge21
+ xpos 1213
+ ypos -1088
+}
+Dot {
+ name Dot44
+ xpos 1791
+ ypos -1081
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge2
+ xpos 2127
+ ypos -1085
+}
+PostageStamp {
+ name PostageStamp20
+ xpos 3981
+ ypos -1110
+ postage_stamp true
+}
+Dot {
+ name Dot34
+ xpos 4654
+ ypos -1083
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge_Shadow1
+ xpos 4620
+ ypos 121
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge17
+ xpos 4620
+ ypos 1308
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge10
+ xpos 4621
+ ypos 3659
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge7
+ xpos 4621
+ ypos 6062
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge12
+ xpos 4621
+ ypos 7975
+}
+push $N11d085d0
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead6
+ xpos 2564
+ ypos 5059
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat12
+ xpos 2564
+ ypos 5212
+}
+Dot {
+ name Dot11
+ xpos 2598
+ ypos 5553
+}
+set N110eb030 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor3
+ xpos 2479
+ ypos 5549
+}
+Dot {
+ name Dot13
+ xpos 2513
+ ypos 5433
+}
+Dot {
+ name Dot14
+ xpos 2651
+ ypos 5433
+}
+Dot {
+ name Dot15
+ xpos 2651
+ ypos 5717
+}
+push $N11d0b680
+push $N110eb030
+Dot {
+ name Dot106
+ xpos 2598
+ ypos 5618
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor4
+ xpos 2472
+ ypos 5614
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH19
+ xpos 2472
+ ypos 5713
+}
+push $N11dde3e0
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead7
+ xpos 1650
+ ypos 5063
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat11
+ xpos 1650
+ ypos 5217
+}
+Dot {
+ name Dot108
+ xpos 1684
+ ypos 5552
+}
+set N137df2f0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor7
+ xpos 1565
+ ypos 5548
+}
+Dot {
+ name Dot109
+ xpos 1599
+ ypos 5432
+}
+Dot {
+ name Dot110
+ xpos 1737
+ ypos 5432
+}
+Dot {
+ name Dot111
+ xpos 1737
+ ypos 5716
+}
+push $N11de4100
+push $N137df2f0
+Dot {
+ name Dot114
+ xpos 1684
+ ypos 5617
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor22
+ xpos 1558
+ ypos 5613
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH20
+ xpos 1558
+ ypos 5712
+}
+push $N10f34380
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead10
+ xpos 629
+ ypos 5076
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat10
+ xpos 629
+ ypos 5242
+}
+Dot {
+ name Dot116
+ xpos 663
+ ypos 5571
+}
+set N1383a1a0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor23
+ xpos 544
+ ypos 5567
+}
+Dot {
+ name Dot117
+ xpos 578
+ ypos 5451
+}
+Dot {
+ name Dot118
+ xpos 716
+ ypos 5451
+}
+Dot {
+ name Dot119
+ xpos 716
+ ypos 5735
+}
+push $N11dff1d0
+push $N1383a1a0
+Dot {
+ name Dot122
+ xpos 663
+ ypos 5636
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor24
+ xpos 537
+ ypos 5632
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH21
+ xpos 537
+ ypos 5731
+}
+Dot {
+ name Dot123
+ xpos 571
+ ypos 5836
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge4
+ xpos 1558
+ ypos 5832
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge5
+ xpos 2472
+ ypos 5833
+}
+push $N110931a0
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead9
+ xpos 2532
+ ypos 2651
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat9
+ xpos 2532
+ ypos 2808
+}
+Dot {
+ name Dot17
+ xpos 2566
+ ypos 3145
+}
+set N123670e0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor8
+ xpos 2447
+ ypos 3141
+}
+Dot {
+ name Dot18
+ xpos 2481
+ ypos 3025
+}
+Dot {
+ name Dot19
+ xpos 2619
+ ypos 3025
+}
+Dot {
+ name Dot21
+ xpos 2619
+ ypos 3309
+}
+push $N10bf5120
+push $N123670e0
+Dot {
+ name Dot81
+ xpos 2566
+ ypos 3210
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor9
+ xpos 2440
+ ypos 3206
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH13
+ xpos 2440
+ ypos 3305
+}
+push $N11ab0e70
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead11
+ xpos 1618
+ ypos 2655
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat8
+ xpos 1618
+ ypos 2807
+}
+Dot {
+ name Dot83
+ xpos 1652
+ ypos 3144
+}
+set N123c28e0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor10
+ xpos 1533
+ ypos 3140
+}
+Dot {
+ name Dot84
+ xpos 1567
+ ypos 3024
+}
+Dot {
+ name Dot85
+ xpos 1705
+ ypos 3024
+}
+Dot {
+ name Dot86
+ xpos 1705
+ ypos 3308
+}
+push $N119a3570
+push $N123c28e0
+Dot {
+ name Dot89
+ xpos 1652
+ ypos 3209
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor19
+ xpos 1526
+ ypos 3205
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH14
+ xpos 1526
+ ypos 3304
+}
+push $N11a29ff0
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead12
+ xpos 597
+ ypos 2668
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat7
+ xpos 597
+ ypos 2814
+}
+Dot {
+ name Dot91
+ xpos 631
+ ypos 3163
+}
+set N111c2d00 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor20
+ xpos 512
+ ypos 3159
+}
+Dot {
+ name Dot92
+ xpos 546
+ ypos 3043
+}
+Dot {
+ name Dot93
+ xpos 684
+ ypos 3043
+}
+Dot {
+ name Dot94
+ xpos 684
+ ypos 3327
+}
+push $N11aeec10
+push $N111c2d00
+Dot {
+ name Dot97
+ xpos 631
+ ypos 3228
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor21
+ xpos 505
+ ypos 3224
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH15
+ xpos 505
+ ypos 3323
+}
+Dot {
+ name Dot98
+ xpos 539
+ ypos 3428
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge8
+ xpos 1526
+ ypos 3424
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge9
+ xpos 2440
+ ypos 3425
+}
+push $N11bcab50
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead4
+ xpos 2542
+ ypos 285
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat6
+ xpos 2542
+ ypos 424
+}
+Dot {
+ name Dot9
+ xpos 2576
+ ypos 779
+}
+set N1123c690 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor1
+ xpos 2457
+ ypos 775
+}
+Dot {
+ name Dot12
+ xpos 2491
+ ypos 659
+}
+Dot {
+ name Dot26
+ xpos 2629
+ ypos 659
+}
+Dot {
+ name Dot27
+ xpos 2629
+ ypos 943
+}
+push $N11bd1260
+push $N1123c690
+Dot {
+ name Dot48
+ xpos 2576
+ ypos 844
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor6
+ xpos 2450
+ ypos 840
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH7
+ xpos 2450
+ ypos 939
+}
+push $N11be9940
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead5
+ xpos 1628
+ ypos 289
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat5
+ xpos 1628
+ ypos 427
+}
+Dot {
+ name Dot59
+ xpos 1662
+ ypos 778
+}
+set N11297ed0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor13
+ xpos 1543
+ ypos 774
+}
+Dot {
+ name Dot60
+ xpos 1577
+ ypos 658
+}
+Dot {
+ name Dot61
+ xpos 1715
+ ypos 658
+}
+Dot {
+ name Dot62
+ xpos 1715
+ ypos 942
+}
+push $N11c2c0d0
+push $N11297ed0
+Dot {
+ name Dot65
+ xpos 1662
+ ypos 843
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor16
+ xpos 1536
+ ypos 839
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH8
+ xpos 1536
+ ypos 938
+}
+push $N11a57e70
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead8
+ xpos 615
+ ypos 302
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat4
+ xpos 615
+ ypos 447
+}
+Dot {
+ name Dot67
+ xpos 649
+ ypos 797
+}
+set N112f36d0 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor17
+ xpos 530
+ ypos 793
+}
+Dot {
+ name Dot68
+ xpos 564
+ ypos 677
+}
+Dot {
+ name Dot69
+ xpos 702
+ ypos 677
+}
+Dot {
+ name Dot70
+ xpos 702
+ ypos 961
+}
+push $N11c08470
+push $N112f36d0
+Dot {
+ name Dot73
+ xpos 649
+ ypos 862
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor18
+ xpos 523
+ ypos 858
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH9
+ xpos 523
+ ypos 957
+}
+Dot {
+ name Dot74
+ xpos 557
+ ypos 1062
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge1
+ xpos 1536
+ ypos 1058
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge3
+ xpos 2450
+ ypos 1059
+}
+push $N118be640
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead3
+ xpos 2533
+ ypos -2095
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat3
+ xpos 2533
+ ypos -1966
+}
+Dot {
+ name Dot51
+ xpos 2567
+ ypos -1601
+}
+set N128b7460 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor2
+ xpos 2448
+ ypos -1605
+}
+Dot {
+ name Dot52
+ xpos 2482
+ ypos -1721
+}
+Dot {
+ name Dot53
+ xpos 2620
+ ypos -1721
+}
+Dot {
+ name Dot54
+ xpos 2620
+ ypos -1437
+}
+push $N11066ba0
+push $N128b7460
+Dot {
+ name Dot57
+ xpos 2567
+ ypos -1536
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor15
+ xpos 2441
+ ypos -1540
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH5
+ xpos 2441
+ ypos -1441
+}
+push $N10f9c470
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead2
+ xpos 1619
+ ypos -2091
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat2
+ xpos 1619
+ ypos -1962
+}
+Dot {
+ name Dot29
+ xpos 1653
+ ypos -1602
+}
+set N12912c60 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor5
+ xpos 1534
+ ypos -1606
+}
+Dot {
+ name Dot40
+ xpos 1568
+ ypos -1722
+}
+Dot {
+ name Dot41
+ xpos 1706
+ ypos -1722
+}
+Dot {
+ name Dot42
+ xpos 1706
+ ypos -1438
+}
+push $N10bc31c0
+push $N12912c60
+Dot {
+ name Dot47
+ xpos 1653
+ ypos -1537
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor11
+ xpos 1527
+ ypos -1541
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH2
+ xpos 1527
+ ypos -1442
+}
+push $N11047050
+DeepRead {
+ inputs 0
+ format "2048 1433 0 0 2048 1433 1 "
+ first 1001
+ last 1741
+ origfirst 1001
+ origlast 1741
+ origset true
+ name DeepRead1
+ xpos 598
+ ypos -2084
+}
+DeepReformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name DeepReformat1
+ xpos 598
+ ypos -1967
+}
+Dot {
+ name Dot32
+ xpos 632
+ ypos -1583
+}
+set N1296e460 [stack 0]
+DeepRecolor {
+ inputs 2
+ name DeepRecolor12
+ xpos 513
+ ypos -1587
+}
+Dot {
+ name Dot33
+ xpos 547
+ ypos -1703
+}
+Dot {
+ name Dot39
+ xpos 685
+ ypos -1703
+}
+Dot {
+ name Dot35
+ xpos 685
+ ypos -1419
+}
+push $N133e26b0
+push $N1296e460
+Dot {
+ name Dot38
+ xpos 632
+ ypos -1518
+}
+DeepRecolor {
+ inputs 2
+ name DeepRecolor14
+ xpos 506
+ ypos -1522
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH4
+ xpos 506
+ ypos -1423
+}
+Dot {
+ name Dot3
+ xpos 540
+ ypos -1318
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge7
+ xpos 1527
+ ypos -1322
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge2
+ xpos 2441
+ ypos -1321
+}
+Dot {
+ name Dot4
+ xpos 4914
+ ypos -1317
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge15
+ xpos 4880
+ ypos 1059
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge10
+ xpos 4880
+ ypos 3425
+}
+DeepMerge2 {
+ inputs 2
+ name DeepMerge6
+ xpos 4880
+ ypos 5833
+}
+DeepToImage2 {
+ name DeepToImage1
+ xpos 4880
+ ypos 7006
+ postage_stamp true
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge14
+ xpos 4880
+ ypos 7975
+}
+PostageStamp {
+ name PostageStamp24
+ xpos 4880
+ ypos 8101
+ postage_stamp true
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp32
+ xpos 10053
+ ypos 7290
+ postage_stamp true
+}
+Expression {
+ name Expression3
+ xpos 10053
+ ypos 7494
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp33
+ xpos 9853
+ ypos 7290
+ postage_stamp true
+}
+Expression {
+ name Expression4
+ xpos 9853
+ ypos 7491
+}
+Dot {
+ name Dot154
+ xpos 9887
+ ypos 7690
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge23
+ xpos 10053
+ ypos 7686
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp25
+ xpos 11545
+ ypos 4470
+ postage_stamp true
+}
+Shuffle2 {
+ fromInput1 {{0} B}
+ in1 shadow_mask
+ fromInput2 {{0} B}
+ mappings "4 shadow_mask.red 0 0 rgba.red 0 0 shadow_mask.green 0 1 rgba.green 0 1 shadow_mask.blue 0 2 rgba.blue 0 2 black -1 -1 rgba.alpha 0 3"
+ name Shuffle_Shadow2
+ xpos 11545
+ ypos 4618
+}
+set Nd2c268a0 [stack 0]
+Dot {
+ name Dot132
+ xpos 11395
+ ypos 4622
+}
+Keyer {
+ operation "luminance key"
+ name Keyer1
+ xpos 11361
+ ypos 4684
+}
+Grade {
+ white {0.85 1 1.15 1}
+ multiply 0.02
+ name Grade
+ xpos 11361
+ ypos 4784
+}
+push $Nd2c268a0
+Dot {
+ name Dot147
+ xpos 11774
+ ypos 4622
+}
+Keyer {
+ operation "luminance key"
+ range {0.009115931423 0.3697128861 1 1}
+ name Keyer2
+ xpos 11740
+ ypos 4680
+}
+Blur {
+ channels alpha
+ size 7
+ name Blur
+ xpos 11740
+ ypos 4780
+}
+push $Nd2c268a0
+Invert {
+ name Invert
+ xpos 11545
+ ypos 4682
+}
+Grade {
+ inputs 1+1
+ white {0.8499999642 1 1.149999976 1}
+ name Grade12
+ xpos 11545
+ ypos 4786
+}
+Dot {
+ name Dot149
+ xpos 11579
+ ypos 4883
+}
+Merge2 {
+ inputs 2
+ name Merge25
+ xpos 11361
+ ypos 4879
+}
+Dot {
+ name Dot153
+ xpos 11395
+ ypos 5054
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp27
+ xpos 10884
+ ypos 2840
+ postage_stamp true
+}
+Reformat {
+ name Reformat20
+ xpos 10884
+ ypos 3033
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge_Shadow
+ xpos 10884
+ ypos 5050
+}
+Dot {
+ name Dot146
+ xpos 10909
+ ypos 8303
+}
+Merge2 {
+ inputs 2
+ name Merge24
+ xpos 10053
+ ypos 8291
+}
+PostageStamp {
+ name PostageStamp15
+ xpos 5094
+ ypos 8276
+ postage_stamp true
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ name Merge20
+ xpos 4880
+ ypos 8299
+}
+Camera3 {
+ inputs 0
+ focal 10
+ name Camera2
+ xpos 5819
+ ypos 9060
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp26
+ xpos 5646
+ ypos 8789
+ hide_input true
+ postage_stamp true
+}
+Reformat {
+ format "4096 2048 0 0 4096 2048 1 4K_LatLong"
+ name Reformat22
+ xpos 5646
+ ypos 8905
+}
+Sphere {
+ rotate {0 180 0}
+ uniform_scale 10
+ name Sphere1
+ xpos 5646
+ ypos 8981
+}
+push 0
+ScanlineRender {
+ inputs 3
+ conservative_shader_sampling false
+ motion_vectors_type distance
+ name ScanlineRender1
+ xpos 5646
+ ypos 9080
+}
+Dot {
+ name Dot131
+ xpos 5680
+ ypos 9189
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp14
+ xpos 5310
+ ypos 8799
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat18
+ xpos 5310
+ ypos 8918
+}
+Dot {
+ name Dot23
+ xpos 5344
+ ypos 9190
+}
+Switch {
+ inputs 2
+ name Switch1
+ xpos 5454
+ ypos 9316
+}
+Defocus {
+ defocus 10
+ name Defocus2
+ xpos 5190
+ ypos 9310
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge1
+ xpos 4880
+ ypos 9316
+}
+PostageStamp {
+ inputs 0
+ name PostageStamp19
+ xpos 6386
+ ypos 9139
+ postage_stamp true
+}
+Reformat {
+ format "4096 2160 0 0 4096 2160 1 4K_DCP"
+ name Reformat1
+ xpos 6386
+ ypos 9342
+}
+set N12b9b450 [stack 0]
+push $N12b9b450
+Dot {
+ name Dot7
+ xpos 6590
+ ypos 9352
+}
+Dot {
+ name Dot129
+ xpos 6590
+ ypos 9588
+}
+Switch {
+ inputs 2
+ which {{parent.switch_node.which}}
+ name LGT_SWITCH26
+ xpos 6386
+ ypos 9584
+}
+Dot {
+ name Dot25
+ xpos 6420
+ ypos 9768
+}
+Merge2 {
+ inputs 2
+ operation disjoint-over
+ also_merge all
+ name Merge13
+ xpos 4880
+ ypos 9764
+}
+Merge2 {
+ inputs 2
+ name Merge11
+ xpos 4880
+ ypos 10236
+ disable true
+}
+Dot {
+ name Dot6
+ xpos 4914
+ ypos 10986
+}
+set N12bed1e0 [stack 0]
+Remove {
+ operation keep
+ channels rgba
+ name Remove1
+ xpos 4880
+ ypos 11057
+}
+Reformat {
+ format "2048 1433 0 0 2048 1433 1 "
+ name Reformat2
+ xpos 4880
+ ypos 11131
+}
+Write {
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ name Write1
+ xpos 4880
+ ypos 11228
+ postage_stamp true
+}
+push $N12bed1e0
+rm_AOV_Contactsheet {
+ name rm_AOV_Contactsheet1
+ xpos 5442
+ ypos 10982
+ text_labels_taba 1
+ font_size_mult 2.55
+ transform_X_knob -700
+ transform_Y_knob -500
+ border_tab 1
+ border_draw false
+ channel_filter ""
+ addUserKnob {20 User}
+ addUserKnob {6 chk_AO l AO +STARTLINE}
+ chk_AO true
+ addUserKnob {6 chk_ID_01 l ID_01 +STARTLINE}
+ chk_ID_01 true
+ addUserKnob {6 chk_ID_02 l ID_02 +STARTLINE}
+ chk_ID_02 true
+ addUserKnob {6 chk_ID_03 l ID_03 +STARTLINE}
+ chk_ID_03 true
+ addUserKnob {6 chk_ID_04 l ID_04 +STARTLINE}
+ chk_ID_04 true
+ addUserKnob {6 chk_ID_05 l ID_05 +STARTLINE}
+ chk_ID_05 true
+ addUserKnob {6 chk_ID_06 l ID_06 +STARTLINE}
+ chk_ID_06 true
+ addUserKnob {6 chk_ID_07 l ID_07 +STARTLINE}
+ chk_ID_07 true
+ addUserKnob {6 chk_ID_08 l ID_08 +STARTLINE}
+ chk_ID_08 true
+ addUserKnob {6 chk_N l N +STARTLINE}
+ chk_N true
+ addUserKnob {6 chk_P l P +STARTLINE}
+ chk_P true
+ addUserKnob {6 chk_Pref l Pref +STARTLINE}
+ chk_Pref true
+ addUserKnob {6 chk_RGBA_MultiLight00 l RGBA_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_RGBA_MultiLight01 l RGBA_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_RGBA_default l RGBA_default +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight03 l RGBA_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight04 l RGBA_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight05 l RGBA_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight06 l RGBA_multiLight06 +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight11 l RGBA_multiLight11 +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight12 l RGBA_multiLight12 +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight13 l RGBA_multiLight13 +STARTLINE}
+ addUserKnob {6 chk_albedo l albedo +STARTLINE}
+ chk_albedo true
+ addUserKnob {6 chk_coat l coat +STARTLINE}
+ chk_coat true
+ addUserKnob {6 chk_crypto_asset l crypto_asset +STARTLINE}
+ chk_crypto_asset true
+ addUserKnob {6 chk_crypto_material l crypto_material +STARTLINE}
+ chk_crypto_material true
+ addUserKnob {6 chk_crypto_object l crypto_object +STARTLINE}
+ chk_crypto_object true
+ addUserKnob {6 chk_depth l depth +STARTLINE}
+ chk_depth true
+ addUserKnob {6 chk_diffuse l diffuse +STARTLINE}
+ chk_diffuse true
+ addUserKnob {6 chk_diffuse_direct l diffuse_direct +STARTLINE}
+ addUserKnob {6 chk_diffuse_indirect l diffuse_indirect +STARTLINE}
+ addUserKnob {6 chk_direct l direct +STARTLINE}
+ chk_direct true
+ addUserKnob {6 chk_indirect l indirect +STARTLINE}
+ chk_indirect true
+ addUserKnob {6 chk_indirect_MultiLight00 l indirect_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_indirect_MultiLight01 l indirect_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_indirect_default l indirect_default +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight03 l indirect_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight04 l indirect_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight05 l indirect_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight06 l indirect_multiLight06 +STARTLINE}
+ addUserKnob {6 chk_motionvector l motionvector +STARTLINE}
+ addUserKnob {6 chk_multilightshadow04 l multilightshadow04 +STARTLINE}
+ addUserKnob {6 chk_other l other +STARTLINE}
+ addUserKnob {6 chk_rgba l rgba +STARTLINE}
+ addUserKnob {6 chk_specular l specular +STARTLINE}
+ chk_specular true
+ addUserKnob {6 chk_specular_MultiLight00 l specular_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_specular_MultiLight01 l specular_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_specular_default l specular_default +STARTLINE}
+ addUserKnob {6 chk_specular_direct l specular_direct +STARTLINE}
+ addUserKnob {6 chk_specular_direct_MultiLight00 l specular_direct_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_MultiLight01 l specular_direct_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_default l specular_direct_default +STARTLINE}
+ addUserKnob {6 chk_specular_direct_multiLight11 l specular_direct_multiLight11 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_multiLight12 l specular_direct_multiLight12 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_multiLight13 l specular_direct_multiLight13 +STARTLINE}
+ addUserKnob {6 chk_specular_indirect l specular_indirect +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight03 l specular_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight04 l specular_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight05 l specular_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight06 l specular_multiLight06 +STARTLINE}
+ addUserKnob {6 chk_sss l sss +STARTLINE}
+ chk_sss true
+ addUserKnob {6 chk_sss_MultiLight00 l sss_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_sss_MultiLight01 l sss_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_sss_default l sss_default +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight03 l sss_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight04 l sss_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight05 l sss_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight06 l sss_multiLight06 +STARTLINE}
+}
+Remove {
+ operation keep
+ channels rgba
+ name Remove2
+ xpos 5442
+ ypos 11057
+}
+Reformat {
+ format "2048 1433 0 0 2048 1433 1 "
+ name Reformat5
+ xpos 5442
+ ypos 11129
+}
+Write {
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ name Write2
+ xpos 5442
+ ypos 11219
+ postage_stamp true
+}
+push $N12bed1e0
+rm_AOV_Contactsheet {
+ name rm_AOV_Contactsheet2
+ xpos 4329
+ ypos 10982
+ text_labels_taba 1
+ font_size_mult 1.2
+ transform_X_knob -600
+ transform_Y_knob -600
+ border_tab 1
+ border_draw false
+ channel_filter ""
+ addUserKnob {20 User}
+ addUserKnob {6 chk_AO l AO +STARTLINE}
+ addUserKnob {6 chk_ID_01 l ID_01 +STARTLINE}
+ addUserKnob {6 chk_ID_02 l ID_02 +STARTLINE}
+ addUserKnob {6 chk_ID_03 l ID_03 +STARTLINE}
+ addUserKnob {6 chk_ID_04 l ID_04 +STARTLINE}
+ addUserKnob {6 chk_ID_05 l ID_05 +STARTLINE}
+ addUserKnob {6 chk_ID_06 l ID_06 +STARTLINE}
+ addUserKnob {6 chk_ID_07 l ID_07 +STARTLINE}
+ addUserKnob {6 chk_ID_08 l ID_08 +STARTLINE}
+ addUserKnob {6 chk_N l N +STARTLINE}
+ addUserKnob {6 chk_P l P +STARTLINE}
+ addUserKnob {6 chk_Pref l Pref +STARTLINE}
+ addUserKnob {6 chk_RGBA_MultiLight00 l RGBA_MultiLight00 +STARTLINE}
+ chk_RGBA_MultiLight00 true
+ addUserKnob {6 chk_RGBA_MultiLight01 l RGBA_MultiLight01 +STARTLINE}
+ chk_RGBA_MultiLight01 true
+ addUserKnob {6 chk_RGBA_default l RGBA_default +STARTLINE}
+ addUserKnob {6 chk_RGBA_multiLight03 l RGBA_multiLight03 +STARTLINE}
+ chk_RGBA_multiLight03 true
+ addUserKnob {6 chk_RGBA_multiLight04 l RGBA_multiLight04 +STARTLINE}
+ chk_RGBA_multiLight04 true
+ addUserKnob {6 chk_RGBA_multiLight05 l RGBA_multiLight05 +STARTLINE}
+ chk_RGBA_multiLight05 true
+ addUserKnob {6 chk_RGBA_multiLight06 l RGBA_multiLight06 +STARTLINE}
+ chk_RGBA_multiLight06 true
+ addUserKnob {6 chk_RGBA_multiLight11 l RGBA_multiLight11 +STARTLINE}
+ chk_RGBA_multiLight11 true
+ addUserKnob {6 chk_RGBA_multiLight12 l RGBA_multiLight12 +STARTLINE}
+ chk_RGBA_multiLight12 true
+ addUserKnob {6 chk_RGBA_multiLight13 l RGBA_multiLight13 +STARTLINE}
+ chk_RGBA_multiLight13 true
+ addUserKnob {6 chk_albedo l albedo +STARTLINE}
+ chk_albedo true
+ addUserKnob {6 chk_coat l coat +STARTLINE}
+ addUserKnob {6 chk_crypto_asset l crypto_asset +STARTLINE}
+ addUserKnob {6 chk_crypto_material l crypto_material +STARTLINE}
+ addUserKnob {6 chk_crypto_object l crypto_object +STARTLINE}
+ addUserKnob {6 chk_depth l depth +STARTLINE}
+ addUserKnob {6 chk_diffuse l diffuse +STARTLINE}
+ chk_diffuse true
+ addUserKnob {6 chk_diffuse_direct l diffuse_direct +STARTLINE}
+ addUserKnob {6 chk_diffuse_indirect l diffuse_indirect +STARTLINE}
+ addUserKnob {6 chk_direct l direct +STARTLINE}
+ addUserKnob {6 chk_indirect l indirect +STARTLINE}
+ addUserKnob {6 chk_indirect_MultiLight00 l indirect_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_indirect_MultiLight01 l indirect_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_indirect_default l indirect_default +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight03 l indirect_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight04 l indirect_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight05 l indirect_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_indirect_multiLight06 l indirect_multiLight06 +STARTLINE}
+ addUserKnob {6 chk_motionvector l motionvector +STARTLINE}
+ addUserKnob {6 chk_multilightshadow04 l multilightshadow04 +STARTLINE}
+ addUserKnob {6 chk_other l other +STARTLINE}
+ addUserKnob {6 chk_rgba l rgba +STARTLINE}
+ chk_rgba true
+ addUserKnob {6 chk_specular l specular +STARTLINE}
+ addUserKnob {6 chk_specular_MultiLight00 l specular_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_specular_MultiLight01 l specular_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_specular_default l specular_default +STARTLINE}
+ addUserKnob {6 chk_specular_direct l specular_direct +STARTLINE}
+ addUserKnob {6 chk_specular_direct_MultiLight00 l specular_direct_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_MultiLight01 l specular_direct_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_default l specular_direct_default +STARTLINE}
+ addUserKnob {6 chk_specular_direct_multiLight11 l specular_direct_multiLight11 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_multiLight12 l specular_direct_multiLight12 +STARTLINE}
+ addUserKnob {6 chk_specular_direct_multiLight13 l specular_direct_multiLight13 +STARTLINE}
+ addUserKnob {6 chk_specular_indirect l specular_indirect +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight03 l specular_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight04 l specular_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight05 l specular_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_specular_multiLight06 l specular_multiLight06 +STARTLINE}
+ addUserKnob {6 chk_sss l sss +STARTLINE}
+ addUserKnob {6 chk_sss_MultiLight00 l sss_MultiLight00 +STARTLINE}
+ addUserKnob {6 chk_sss_MultiLight01 l sss_MultiLight01 +STARTLINE}
+ addUserKnob {6 chk_sss_default l sss_default +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight03 l sss_multiLight03 +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight04 l sss_multiLight04 +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight05 l sss_multiLight05 +STARTLINE}
+ addUserKnob {6 chk_sss_multiLight06 l sss_multiLight06 +STARTLINE}
+}
+Remove {
+ operation keep
+ channels rgba
+ name Remove3
+ xpos 4329
+ ypos 11058
+}
+Reformat {
+ format "2048 1433 0 0 2048 1433 1 "
+ name Reformat6
+ xpos 4329
+ ypos 11130
+}
+Write {
+ ocioColorspace scene_linear
+ display ACES
+ view sRGB
+ name Write3
+ xpos 4329
+ ypos 11224
+ postage_stamp true
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte1
+ xpos 1383
+ ypos -1829
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte3
+ xpos 2304
+ ypos -1844
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte5
+ xpos 1399
+ ypos 565
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte6
+ xpos 2338
+ ypos 555
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte7
+ xpos 385
+ ypos 2950
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte8
+ xpos 1395
+ ypos 2933
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte9
+ xpos 2302
+ ypos 2930
+ cached true
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte11
+ xpos 1416
+ ypos 5354
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte12
+ xpos 2351
+ ypos 5339
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte4
+ xpos 397
+ ypos 593
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte2
+ xpos 369
+ ypos -1832
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte14
+ xpos 9100
+ ypos -405
+}
+Switch {
+ inputs 0
+ which {{sd}}
+ name switch_node
+ tile_color 0x7fff
+ gl_color 0x55ffffff
+ label "LGT SWITCH NODE"
+ note_font "DejaVu Sans Bold"
+ note_font_size 30
+ note_font_color 0xff
+ xpos 4890
+ ypos 11643
+ hide_input true
+ postage_stamp true
+ postage_stamp_frame 0
+ lifetimeStart 1001
+ lifetimeEnd 1721
+ addUserKnob {20 LGTSwitch}
+ addUserKnob {4 sd l "Select Flow" M {NON_Edited Edited "" "" "" ""}}
+ sd Edited
+}
+StickyNote {
+ inputs 0
+ name StickyNote14
+ tile_color 0xe89006ff
+ gl_color 0x5381ccff
+ label !
+ note_font "League Spartan"
+ note_font_size 50
+ xpos 5018
+ ypos 11603
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte10
+ xpos 415
+ ypos 5396
+}
+Cryptomatte {
+ inputs 0
+ pickerAdd {0 0 0 0 0 0 0 0}
+ name Cryptomatte13
+ xpos 3893
+ ypos 7696
+}
